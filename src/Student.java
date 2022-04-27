@@ -25,8 +25,11 @@ public Student(String major,StudentStatus  status, ArrayList chosenCourses, Arra
         attendedLectures.add(lecture);
     }
 
-    public void signUpForCourse(Course course) {
-        chosenCourses.add(course);
+    public void signUpForCourse(Course course)  {
+    if (course.isCourseIsOffered() == false){
+        throw new IllegalArgumentException();
+    }
+    chosenCourses.add(course);
         course.addStudentsToCourse(this);
     }
 

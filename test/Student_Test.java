@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 //Test
 public class Student_Test {
     private HashMap grades = new HashMap();
@@ -16,6 +18,7 @@ public class Student_Test {
     ArrayList taughtCourses2 = new ArrayList<>();
     Lecturer jez = new Lecturer(taughtCourses);
     Course aep = new Course("aep", studentsInCourse);
+    Course aep2 = new Course("aep", studentsInCourse);
     Lecturer kurt = new Lecturer(taughtCourses2);
     Course entrepreneurship = new Course("aep", studentsInCourse);
     Student jan = new Student("businessInformatics", StudentStatus.VISITINGSTUDENTRESEARCHER, coursesChosen, attendedLectures, grades);
@@ -41,5 +44,10 @@ public class Student_Test {
     public  void studentAccessToLibraryShouldBeSuccesful(){
         Building doe = new Building("doe", BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS);
         assertEquals("Success", jan.accessBuilding(doe));
+    }
+@Test
+    public void studentSingsUpForNonExistingCourseShouldThrowException(){
+    aep2.courseNotOffered();
+        assertThrows(IllegalArgumentException.class,() -> jan.signUpForCourse(aep2));
     }
 }

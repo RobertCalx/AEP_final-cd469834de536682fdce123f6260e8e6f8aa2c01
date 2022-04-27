@@ -5,6 +5,7 @@ import java.util.List;
 public class Course {
     private String name;
     private List  studentsInCourse = new ArrayList();
+    private boolean courseIsOffered = true;
 
     public Course(String name, List studentsInCourse) {
         this.name = name;
@@ -17,5 +18,17 @@ public class Course {
 
     public  int numberOfStudentsInCourse(){
         return studentsInCourse.size();
+    }
+
+    public void courseNotOffered (){
+        courseIsOffered = false;
+    }
+
+    public void courseOffered (){
+        courseIsOffered = true;
+    }
+
+    public boolean isCourseIsOffered() {
+        return courseIsOffered;
     }
 }
