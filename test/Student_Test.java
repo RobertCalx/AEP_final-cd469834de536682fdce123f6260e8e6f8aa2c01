@@ -50,4 +50,11 @@ public class Student_Test {
     aep2.courseNotOffered();
         assertThrows(IllegalArgumentException.class,() -> jan.signUpForCourse(aep2));
     }
+
+    @Test
+    public void studentReceivesFeedbackFromInstructor(){
+        jez.gradeStudent(aep,jan,4.0);
+        String feedbackReceived = jan.receiveFeedback(jez, aep);
+        assertEquals("Feedback has been received", feedbackReceived);
+    }
 }

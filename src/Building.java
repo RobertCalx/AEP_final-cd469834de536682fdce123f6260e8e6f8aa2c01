@@ -28,7 +28,7 @@ public class Building {
     }
 
     public boolean isBuildingOpen(LocalTime timeToBeVerified) {
-        if (timeToBeVerified.isAfter(openingTime)&&timeToBeVerified.isBefore(closingTime))
+        if (timeToBeVerified.isAfter(openingTime) && timeToBeVerified.isBefore(closingTime))
             return true;
         return false;
     }

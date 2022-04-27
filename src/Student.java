@@ -50,4 +50,13 @@ public Student(String major,StudentStatus  status, ArrayList chosenCourses, Arra
             return "Success";
         return "Denied";
     }
+
+    public String receiveFeedback(Lecturer lecturer, Course course) {
+
+    if (!grades.containsKey(course))
+        return "Feedback could not be provided";
+    String grade = grades.get(course).toString();
+    System.out.println("Lecturer + Your grade is " + grade);
+    return "Feedback has been received";
+    }
 }
