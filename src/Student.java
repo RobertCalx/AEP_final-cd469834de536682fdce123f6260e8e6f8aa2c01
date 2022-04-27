@@ -39,4 +39,12 @@ public Student(String major,StudentStatus  status, ArrayList chosenCourses, Arra
         double sum = grades.values().stream().mapToDouble(i-> i).sum();
         return sum/size;
     }
+
+    public String accessBuilding(Building building) {
+        if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.OPENTOTHEPUBLIC))
+            return "Success";
+        else if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS))
+            return "Success";
+        return "Denied";
+    }
 }

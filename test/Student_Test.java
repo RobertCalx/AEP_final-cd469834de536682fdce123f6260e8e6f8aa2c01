@@ -36,4 +36,10 @@ public class Student_Test {
         kurt.gradeStudent(entrepreneurship,jan,2.0);
         assertEquals(3.0, jan.calculateGPA(), 0);
     }
+
+    @Test
+    public  void studentAccessToLibraryShouldBeSuccesful(){
+        Building doe = new Building("doe", BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS);
+        assertEquals("Success", jan.accessBuilding(doe));
+    }
 }

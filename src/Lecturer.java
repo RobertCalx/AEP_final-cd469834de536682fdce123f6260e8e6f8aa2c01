@@ -11,4 +11,14 @@ public class Lecturer {
     public void gradeStudent(Course course, Student student, Double grade){ //Is this method correct
         student.receiveGrade(course, grade);
     }
+
+    public String accessBuilding(Building building) {
+        if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.OPENTOTHEPUBLIC))
+            return "Success";
+        else if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS))
+            return "Success";
+        else if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.RESTRICTEDTOTEACHERS))
+            return "Success";
+        return "Denied";
+    }
 }
