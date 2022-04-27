@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Course_Test {
     ArrayList studentsInCourse= new ArrayList();
     private HashMap grades = new HashMap();
+    Course aep = new Course("aep", studentsInCourse);
 
     @Test
     public void numberOfStudentsInCourseTest(){
-        Course aep = new Course("aep", studentsInCourse);
         ArrayList chosenCourses = new ArrayList<>();
         chosenCourses.add(aep);
         Student Jan = new Student("BusinessInformatics", StudentStatus.VISITINGSTUDENTRESEARCHER,chosenCourses,null, grades );
@@ -22,6 +23,18 @@ public class Course_Test {
         aep.addStudentsToCourse(Rae);
 
         assertEquals(3, aep.numberOfStudentsInCourse());
+    }
+
+    @Test
+    public void teachNewCourse(){
+      ArrayList courses = new ArrayList();
+       // courses.add(aep);
+        Lecturer jez = new Lecturer(courses);
+
+        jez.teachNewCourse(aep);
+
+        assertTrue(jez.getTaughtCourses().contains(aep));
+
     }
 
 

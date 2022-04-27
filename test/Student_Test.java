@@ -46,7 +46,7 @@ public class Student_Test {
         assertEquals("Success", jan.accessBuilding(doe));
     }
 @Test
-    public void studentSingsUpForNonExistingCourseShouldThrowException(){
+    public void studentSignsUpForNonExistingCourseShouldThrowException(){
     aep2.courseNotOffered();
         assertThrows(IllegalArgumentException.class,() -> jan.signUpForCourse(aep2));
     }

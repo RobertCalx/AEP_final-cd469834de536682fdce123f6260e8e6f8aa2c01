@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+//Understands a lecturer and his/her taught courses
 public class Lecturer {
     private ArrayList taughtCourses;
 
@@ -20,5 +21,13 @@ public class Lecturer {
         else if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.RESTRICTEDTOTEACHERS))
             return "Success";
         return "Denied";
+    }
+
+    public ArrayList getTaughtCourses() {
+        return taughtCourses;
+    }
+
+    public void teachNewCourse(Course course) {
+        taughtCourses.add(course);
     }
 }
