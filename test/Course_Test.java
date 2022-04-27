@@ -30,9 +30,7 @@ public class Course_Test {
       ArrayList courses = new ArrayList();
        // courses.add(aep);
         Lecturer jez = new Lecturer(courses);
-
         jez.teachNewCourse(aep);
-
         assertTrue(jez.getTaughtCourses().contains(aep));
 
     }
